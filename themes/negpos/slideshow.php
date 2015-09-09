@@ -9,10 +9,10 @@ if (function_exists('printSlideShow')) {
 		<head>
 				<!-- cl ajout favicon jpg-->
 				<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" 	
-
+				
+				<meta charset="<?php echo LOCAL_CHARSET; ?>">
 				<?php zp_apply_filter('theme_head'); ?>
 				<title><?php echo printBareGalleryTitle(); ?> <?php echo gettext("Slideshow"); ?></title>
-				<meta http-equiv="content-type" content="text/html; charset=<?php echo LOCAL_CHARSET; ?>" />
 				<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/slideshow.css" type="text/css" />
 		</head>
 		<body>
