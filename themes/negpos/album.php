@@ -1,52 +1,32 @@
 <?php
-
 // force UTF-8 Ø
 
 if (!defined('WEBPATH')) 
 	die();
 ?>
 <!DOCTYPE html >
-<html>
+<html><!-- Album -->
 	<head>
-		<!-- cl ajout favicon jpg-->
-		<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" />
-	
-		<meta charset="<?php echo LOCAL_CHARSET; ?>">
-		<?php zp_apply_filter('theme_head'); ?>
-		<?php printHeadTitle(); ?>
-		<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
-		<?php if (class_exists('RSS')) printRSSHeaderLink('Album', getAlbumTitle()); ?>
+		<?php include ("head.php"); ?>
 	</head>
 	<body>
+		<!-- theme body open filter -->
 		<?php zp_apply_filter('theme_body_open'); ?>
 	
-		<div id="main">
+		<div id="main" class="container">
+			 <div class="row" id="header">
+				 <?php include("header.php"); ?>
+			</div>
+			<div class="row" id="breadcrumb">
+				<h2><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » "); ?><strong><?php printAlbumTitle(); ?></strong></h2>
+			</div>
 		
-				<div id="header">
-					<h1><?php printGalleryTitle(); ?></h1>
-					<?php
-					if (getOption('Allow_search')) {
-						$album_list = array('albums' => array($_zp_current_album->name), 'pages' => '0', 'news' => '0');
-						printSearchForm(NULL, 'search', gettext('Search within album'), gettext('Search'), NULL, NULL, $album_list);
-					}
-					?>
-		
-					<!-- cl rajout des selecteurs de langue -->
-					<div id="position_flag_b">
-						<?php if (function_exists('printLanguageSelector')) {
-							printLanguageSelector("langselector");
-							}
-						?> 
-					</div>
-				</div>
-		
-			<div id="content">
+			<div class="row" id="content">
+				<div class="col-sm-4" id="sidebar">
+					<?php include("sidebar.php"); ?>
+				</div><!-- sidebar -->		
 			
-				<div id="breadcrumb">
-					<h2><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » "); ?><strong><?php printAlbumTitle(); ?></strong></h2>
-				</div>
-			
-				<div id="content-left">
+				<div class="col-sm-8" id="content-left">
 					<div><?php printAlbumDesc(); ?></div>
 						
 					<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
@@ -106,21 +86,16 @@ if (!defined('WEBPATH'))
 					@call_user_func('printCommentForm');
 					?>
 			
-				</div><!-- content left-->
-						
-				<div id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div><!-- sidebar -->
-						
-				<div id="footer">
-					<?php include("footer.php"); ?>
-				</div>
-			
+				</div><!-- content left-->			
+					
 			</div><!-- content -->
-		
+			
+			<div class="row" id="footer">
+					<?php include("footer.php"); ?>
+			</div>
+			
 		</div><!-- main -->
-		<?php 
-			zp_apply_filter('theme_body_close');
-		?>
+		<!-- theme body close filter -->
+		<?php zp_apply_filter('theme_body_close');?>
 	</body>
 </html>

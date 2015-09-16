@@ -1,75 +1,32 @@
 <?php
-
 // force UTF-8 Ø
 
 if (!defined('WEBPATH')) 
 	die();
 ?>
 <!DOCTYPE html>
-<html>
+<html><!-- Search -->
 	<head>
-		<!-- cl ajout favicon jpg-->
-		<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" />
-	
-		<meta charset="<?php echo LOCAL_CHARSET; ?>">
-		<?php zp_apply_filter('theme_head'); ?>
-		<?php printHeadTitle(); ?>
-		<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
-		<?php if (class_exists('RSS')) printRSSHeaderLink('Gallery', gettext('Gallery RSS')); ?>
+		<?php include ("head.php"); ?>
 		<?php printZDSearchToggleJS(); ?>
 	</head>
 	<body>
 		<?php zp_apply_filter('theme_body_open'); ?>
-		<div id="main">
-				<div id="header">
-					<h1><?php printGalleryTitle(); ?></h1>
-					<?php
-					$zenpage = extensionEnabled('zenpage');
-					$numimages = getNumImages();
-					$numalbums = getNumAlbums();
-					$total = $numimages + $numalbums;
-					if ($zenpage && !isArchive()) {
-						$numpages = getNumPages();
-						$numnews = getNumNews();
-						$total = $total + $numnews + $numpages;
-					} else {
-						$numpages = $numnews = 0;
-					}
-					if ($total == 0) {
-						$_zp_current_search->clearSearchWords();
-					}
-					if (getOption('Allow_search')) {
-						$categorylist = $_zp_current_search->getCategoryList();
-						if (is_array($categorylist)) {
-							$catlist = array('news' => $categorylist, 'albums' => '0', 'images' => '0', 'pages' => '0');
-							printSearchForm(NULL, 'search', NULL, gettext('Search category'), NULL, NULL, $catlist);
-						} else {
-							$albumlist = $_zp_current_search->getAlbumList();
-							if (is_array($albumlist)) {
-								$album_list = array('albums' => $albumlist, 'pages' => '0', 'news' => '0');
-								printSearchForm(NULL, 'search', NULL, gettext('Search album'), NULL, NULL, $album_list);
-							} else {
-								printSearchForm("", "search", "", gettext("Search gallery"));
-							}
-						}
-					}
-					?>
-			
-					<!-- cl rajout des selecteurs de langues dans le header -->>
-							<div id="position_flag_b">
-							<?php if (function_exists('printLanguageSelector')) {
-								printLanguageSelector("langselector");
-								}
-							?> </div>
-				</div> <!-- header -->
-		
-				<div id="breadcrumb">
+		<div id="main" class="container">
+			 <div class="row" id="header">
+				 <?php include("header.php"); ?>
+			</div>
+			<div class="row" id="breadcrumb">
 					<h2><?php printGalleryIndexURL(' » '); printSearchBreadcrumb(" » "); ?>
 					</h2>
-				</div>
+			</div>
 		
-				<div id="content">
-					<div id="content-left">
+			<div class="row" id="content">
+				<div class="col-sm-4" id="sidebar">
+					<?php include("sidebar.php"); ?>
+				</div><!-- sidebar -->		
+			
+				<div class="col-sm-8" id="content-left">
 						<?php
 						$searchwords = getSearchWords();
 						$searchdate = getSearchDate();
@@ -183,18 +140,16 @@ if (!defined('WEBPATH'))
 						printPageListWithNav("« " . gettext("prev"), gettext("next") . " »");
 						?>
 			
-				</div><!-- content left-->
-			
-				<div id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div><!-- sidebar -->
-
-				<div id="footer">
-					<?php include("footer.php"); ?>
-				</div>
+				</div><!-- content left-->			
+					
 			</div><!-- content -->
 			
+			<div class="row" id="footer">
+					<?php include("footer.php"); ?>
+			</div>
+			
 		</div><!-- main -->
+		<!-- theme body close filter -->
 		<?php zp_apply_filter('theme_body_close');?>
 	</body>
 </html>

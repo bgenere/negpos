@@ -3,36 +3,30 @@
 
 if (!defined('WEBPATH')) 
 	die();
-
 ?>
 <!DOCTYPE html>
-<html>
+<html><!-- Archive -->
 	<head>
-		<!-- cl ajout favicon jpg-->
-		<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" />
-	
-		<meta charset="<?php echo LOCAL_CHARSET; ?>">
-		<?php zp_apply_filter('theme_head'); ?>
-		<?php printHeadTitle(); ?>
-		<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
-		<?php if (class_exists('RSS')) printRSSHeaderLink('Gallery', gettext('Gallery RSS')); ?>
+		<?php include ("head.php"); ?>
 	</head>
-
 	<body>
+		<!-- theme body open filter -->
 		<?php zp_apply_filter('theme_body_open'); ?>
-	
-		<div id="main">
 		
-				<div id="header">
-					<?php include("header.php"); ?>
-				</div>
-				
-				<div id="breadcrumb">
+		<div id="main" class="container">
+			 <div class="row" id="header">
+				 <?php include("header.php"); ?>
+			</div>
+			<div class="row" id="breadcrumb">
 					<h2><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h2>
-				</div>
+			</div>
 		
-			<div id="content">
-				<div id="content-left">
+			<div class="row" id="content">
+				<div class="col-sm-4" id="sidebar">
+					<?php include("sidebar.php"); ?>
+				</div><!-- sidebar -->		
+			
+				<div class="col-sm-8" id="content-left">
 						<div id="archive">
 							<h3><?php echo gettext('Gallery archive'); ?></h3>
 							<?php printAllDates(); ?>
@@ -48,18 +42,16 @@ if (!defined('WEBPATH'))
 								<?php printAllTagsAs('cloud', 'tags'); ?>
 							</div>
 					</div>
-				</div><!-- content left-->
-			
-				<div id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div><!-- sidebar -->
-			
-				<div id="footer">
-				<?php include("footer.php"); ?>
-				</div>
+				</div><!-- content left-->			
+					
 			</div><!-- content -->
-		
+			
+			<div class="row" id="footer">
+					<?php include("footer.php"); ?>
+			</div>
+			
 		</div><!-- main -->
+		<!-- theme body close filter -->
 		<?php zp_apply_filter('theme_body_close');?>
 	</body>
 </html>

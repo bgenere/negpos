@@ -5,40 +5,15 @@ if (!defined('WEBPATH'))
 	die();
 ?>
 <!DOCTYPE html>
-<html>
+<html><!-- Image -->
 	<head>
-		<!-- cl ajout favicon jpg-->
-		<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" />
-	
-		<meta charset="<?php echo LOCAL_CHARSET; ?>">
-		<?php zp_apply_filter('theme_head'); ?>
-		<?php printHeadTitle(); ?>
-		<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
-		<?php if(zp_has_filter('theme_head','colorbox_css')) { ?>
-			<script type="text/javascript">
-				// <!-- <![CDATA[
-				$(document).ready(function(){
-					$(".colorbox").colorbox({
-						inline:true,
-						href:"#imagemetadata",
-						close: '<?php echo gettext("close"); ?>'
-						});
-					$("a.thickbox").colorbox({
-						maxWidth:"98%",
-						maxHeight:"98%",
-						close: '<?php echo gettext("close"); ?>'
-					});
-				});
-				// ]]> -->
-			</script>
-		<?php } ?>
-		<?php if (class_exists('RSS')) printRSSHeaderLink('Album', getAlbumTitle()); ?>
+		<?php include ("head.php"); ?>
 	</head>
 	<body>
 		<?php zp_apply_filter('theme_body_open'); ?>
 		
-		<div id="main">
-			<div id="header">
+		<div id="main" class="container">
+			 <div class="row" id="header">
 				<?php include("header.php"); ?>
 				<div class="imgnav">
 					<?php if (hasPrevImage()) { ?>
@@ -48,17 +23,20 @@ if (!defined('WEBPATH'))
 					<?php } ?>
 				</div>
 			</div>
-		
-			<div id="content">
-			
-				<div id="breadcrumb">
+			<div class="row" id="breadcrumb">
 						<h2><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » ");
 						printAlbumBreadcrumb("  ", " » ");
 						?>
 							<strong><?php printImageTitle(); ?></strong> (<?php echo imageNumber() . "/" . getNumImages(); ?>)
 						</h2>
-				</div>
-				<div id="content-left">
+			</div>
+		
+			<div class="row" id="content">
+				<div class="col-sm-4" id="sidebar">
+					<?php include("sidebar.php"); ?>
+				</div><!-- sidebar -->		
+			
+				<div class="col-sm-8" id="content-left">
 			
 					<!-- The Image -->
 					<?php
@@ -127,19 +105,16 @@ if (!defined('WEBPATH'))
 					</div>
 					<?php @call_user_func('printCommentForm'); ?>
 	
-				</div><!-- content-left -->
-		
-				<div id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div>
-			
-				<div id="footer">
-					<?php include("footer.php"); ?>
-				</div>
-				
+				</div><!-- content left-->			
+					
 			</div><!-- content -->
-		
+			
+			<div class="row" id="footer">
+					<?php include("footer.php"); ?>
+			</div>
+			
 		</div><!-- main -->
+		<!-- theme body close filter -->
 		<?php zp_apply_filter('theme_body_close');?>
 	</body>
 </html>

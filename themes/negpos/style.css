@@ -1,13 +1,14 @@
-/* !important
+/*/* !important
 	Zenpage Default theme
-*/ /* Basics
------------------------------- */
-html { /* Moz */
+*/ 
+/* Basics
+------------------------------ *
+html { 
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial,
 		sans-serif;
-	color: #5D5D5E;/* CL 21/05/2012 valeur origine #black  */
+	color: #5D5D5E;
 }
 
 a {
@@ -20,47 +21,17 @@ input, textarea {
 }
 h1, h2, h3, h4 {
 font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial,
-		/* cl valeur originesans-serif;Times, "Times New Roman", Georgia, serif */
 }
-
-/* Main Layout
------------------------------- */
-body {
-	background-color: #c9c9c9; /* #DBDBDB;*//* CL 21/05/2012 valeur origine black  */
-	font-size: 62.5%;
-}
-
-#main {
-	padding-top: 0;
-	width: 950px;
-	margin: 0 auto;
-}
-
+*
 #header {
-	width: 950px;
 	height: 123px;
-	background-image: url(http://negpos.fr/negposphoto/uploaded/images/header.gif);/* CL modif valeur origine (images/header.jpg)*/
+	background-image: url(http://negpos.fr/negposphoto/uploaded/images/header.gif);
 	background-repeat: no-repeat;
 	margin: 0;
 	padding: 0;
 }
 
-#header h1 {
-	position: relative;
-	top: 95px;/* cl valeur origine 55px*/
-	left: 317px;/* cl valeur origine 40px*/
-	text-align: left;
-	font-size: 1.8em;/*CL valeur origine 2.4em*/
-	color: grey;/*cl valeur origine black*/
-	/* color: #82996F; */
-        font-style:italic;/* cl rajout*/
-	font-weight: normal;
-	letter-spacing: 0.1em;
-        font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial,
-  sans-serif;/* CL modif 22_05_2012 valeur origine font-family: Times, "Times New Roman", Georgia, serif;*/
-}
-
-/*position dans le header du selecteur de langue*/
+/*position dans le header du selecteur de langue
 #position_flag {
 	
 	margin-top: -37px;
@@ -71,8 +42,8 @@ body {
 	position: absolute;
 	border: 0px solid darkgray;
 }
-
-/*position dans le header du selecteur de langue page new search et album*/
+*/
+/*position dans le header du selecteur de langue page new search et album
 #position_flag_b {
 	
 	margin-top: -49px;
@@ -83,22 +54,20 @@ body {
 	position: absolute;
 	border: 0px solid darkgray;
 }
+*
 
 #breadcrumb {
-	width: 913px;/*cl valeur origine 904px*/
+	width: 913px;
 	height: 1.5em;
-	/* background-color: gray; */
-	margin-left: 0px;/*CL valeur origine 5px*/
+	margin-left: 0px;
 	font-size: 1.3em;
-	padding-top: 4px;/* cl valeur origine 7px*/
-	padding-bottom: 3px;/* cl valeur origine 4px*/
+	padding-top: 4px;
+	padding-bottom: 3px;
 	padding-right: 0;
 	padding-left: 37px;
-	/* cl border-bottom: 1px solid darkgray;
-	border-top: 1px solid darkgray;*/
-	color: black;/*cl valeur origine white*/
-	background-image:url(http://negpos.fr/negposphoto/uploaded/images/fd_barre_horizontale.jpg);/*cl valeur origine (images/breadcrumb-back.jpg)*/
-}
+	color: black;
+	background-image:url(http://negpos.fr/negposphoto/uploaded/images/fd_barre_horizontale.jpg);
+	}
 
 #breadcrumb h2 {
 	margin: 0;
@@ -113,17 +82,17 @@ body {
 
 #breadcrumb a {
 	text-align: right;
-	color: #487384; /*cl valeur origine D1E079*/
+	color: #487384; 
 	border-bottom: 0px dashed white;
 }
 
 #breadcrumb a:hover {
-	color: black;/* cl valeur origine white*/
+	color: black;
 }
 
 #content {
 	width: 950px;
-	background-image: url(http://negpos.fr/negposphoto/uploaded/images/fd_body.jpg);/* cl valeur origine (images/body.jpg)*/
+	background-image: url(http://negpos.fr/negposphoto/uploaded/images/fd_body.jpg);
 	background-repeat: repeat-y;
 }
 
@@ -138,14 +107,14 @@ body {
 #content-left {
 	width: 590px;
 	height: 100%;
-	float: right; /* BG 21/05/2012 valeur originale left */
-	margin-top: 1em;/* cl valeur originale 1em*/
+	float: right; 
+	margin-top: 1em;
 	margin-bottom: 2em;
 	padding-top: 0.8em;
-	padding-left: 0.6em;/* cl valeur originale 3.6em*/
-	padding-right: 3em;/* cl valeur originale 0.6em*/
+	padding-left: 0.6em;
+	padding-right: 3em;
 	font-size: 1.2em;
-	line-height: 1.4em;/* cl valeur 1.6em*/
+	line-height: 1.4em;
 }
 
 #content-left h3, #content-left h2 {
@@ -156,7 +125,7 @@ body {
 	color: black;
 }
 
-/* "Show more results" link for search */
+/* "Show more results" link for search *
 #content-left h3 small {
 	font-size: 1em;
 	font-weight: normal;
@@ -189,7 +158,7 @@ body {
 	margin-bottom: 8px;
 }
 
-/* cl positition map google*/
+/* cl positition map google*
 #map{
 padding-left: 77px;
 }
@@ -197,7 +166,7 @@ padding-left: 77px;
 #sidebar {
 	width: 280px;
 	height: 100%;
-        float: left; /* BG 21/05/2012 valeur originale right */
+        float: left; 
 	background-color: transparent;
 	margin-right: 4px;
 	border-top: 0px dashed red;
@@ -207,7 +176,6 @@ padding-left: 77px;
 	margin-top: 0em;
 	font-size: 1.3em;
 	padding: 1em 0 0.8em 1em;
-	/*border-bottom: 1px dashed darkgray; cl */
 	height: 100%;
 }
 
@@ -236,14 +204,14 @@ padding-left: 77px;
 .menu ul li {
 	padding-left: 20px;
 	padding-bottom: 2px;
-	background-image: url(http://negpos.fr/negposphoto/uploaded/images/arrow_right.gif);/*cl valeur origine (images/arrow_right.gif);*/
+	background-image: url(http://negpos.fr/negposphoto/uploaded/images/arrow_right.gif);
 	background-repeat: no-repeat;
 	background-position: 1px 0px;
 }
 
 .menu ul li.menu_menulabel {
 	padding-left: 0px;
-	font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial;/* cl valeur origine Times, "Times New Roman", Georgia, serif;*/
+	font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial;
 	font-size: 15px;
 	font-weight: normal;
 	text-transform: capitalize;
@@ -273,16 +241,16 @@ padding-left: 77px;
 
 #footer {
 	width: 950px;
-	height: 64px; /*cl valeur origine 35px*/
+	height: 64px; 
 	padding-top: 13px;
-	background-image: url(http://negpos.fr/negposphoto/uploaded/images/footer.jpg);/* cl valeur origine (images/footer.jpg)*/
+	background-image: url(http://negpos.fr/negposphoto/uploaded/images/footer.jpg);
 	background-repeat: no-repeat;
 	text-align: center;
 	clear: both;
 	font-size: 1.2em;
 }
 
-/*cl rajout style partenaire*/
+/*cl rajout style partenaire*
 
 #footer_partenaires ul{
        padding-right: 30px;
@@ -306,7 +274,7 @@ padding-left: 77px;
       margin: 0 5px;  
 }  
 
-/*-------------------------*/
+/*-------------------------*
 .menu-active-1 .submenu li.menu_image {
 	display: none;
 }
@@ -314,38 +282,38 @@ padding-left: 77px;
 .menu li.menu-active-1 > a,
 .menu li.menu-active a,
 .menu li a.menu-active {
-	color: #3C6668/*cl valeur origine 002E5B;*/
+	color: #3C6668
 }
 
 
 /* Link Styles
------------------------------- */
+------------------------------ *
 a:link {
 	text-decoration: none;
-	color: #1E9AA8;/* cl valeur origine 82996F*/
+	color: #1E9AA8;
 	border-bottom: 0px dashed;
 }
 
 a:visited {
 	text-decoration: none;
-	color: #1E9AA8;/* cl valeur origine 82996F*/
+	color: #1E9AA8;
 	border-bottom: 0px dashed;
 }
 
 a:active {
 	text-decoration: none;
-	color: #3C6668;/* cl valeur origine 002E5B*/
+	color: #3C6668;
 	border-bottom: 0px dashed;
 }
 
 a:hover {
 	text-decoration: none;
-	color: #3C6668;/* cl valeur origine 002E5B*/
+	color: #3C6668;
 	border-bottom: 0px dashed;
 }
 
 /* Miscellaneous
------------------------------- */
+------------------------------ *
 img {
 	border: 0;
 }
@@ -377,7 +345,7 @@ blockquote {
 }
 
 /* Page Navigation
------------------------------- */
+------------------------------ *
 ul.pagelist {
 	font-size: 1em;
 	clear: both;
@@ -423,7 +391,7 @@ ul.pagelist li.next {
 }
 
 /* AJAX
------------------------------- */
+------------------------------ *
 #albumDescEditable,#albumTagsEditable {
 	margin-bottom: 12px;
 }
@@ -448,7 +416,7 @@ ul.pagelist li.next {
 
 
 /* Tags
------------------------------- */
+------------------------------ *
 .taglist {
 	margin: 0;
 	padding: 0;
@@ -473,7 +441,7 @@ ul.pagelist li.next {
 }
 
 /* Image Thumbnails
------------------------------- */
+------------------------------ *
 #images {
 	float: left;
 	width: 590px;
@@ -504,7 +472,7 @@ ul.pagelist li.next {
 }
 
 /* Album Thumbnails
------------------------------- */
+------------------------------ *
 #albums {
 	float: left;
 	width: 590px;
@@ -521,10 +489,6 @@ ul.pagelist li.next {
 	background: #FBFBF8;
 	line-height: 100%;
 	height: 95px;
-}
-
-.album a img {
-
 }
 
 .album .thumb {
@@ -559,7 +523,7 @@ ul.pagelist li.next {
 }
 
 /* Individual Image
------------------------------- */
+------------------------------ *
 .image {
 	margin: 0;
 	padding: 0;
@@ -582,7 +546,7 @@ ul.pagelist li.next {
 	font-size: 1.6em;
 	}
 
-/* centering flowplayer 3 and jPlayer on image.php (and jplayer playlists elsewhere) */
+/* centering flowplayer 3 and jPlayer on image.php (and jplayer playlists elsewhere) *
 #image .flowplayer,
 .jp-audio,
 .jp-video {
@@ -608,8 +572,8 @@ ul.pagelist li.next {
   cursor: pointer;
   background: transparent url(images/jcarousel_prev.png) no-repeat 0 0;
 	position: relative;
-	top: 65px;/* cl valeur origine -40px;*/
-	left: -98px;/* cl valeur origine 100px;*/
+	top: 65px;
+	left: -98px;
 	padding: 0;
 	font-size: 120%;
 	text-decoration: none;
@@ -637,9 +601,9 @@ ul.pagelist li.next {
   cursor: pointer;
   background: transparent url(images/jcarousel_next.png) no-repeat 0 0;
 	position: relative;
-	top: 65px;/* cl valeur origine -40px;*/
-	right: -210px; /*cl valeur origine 100px;*/
-	padding: 0px 0;
+	top: 65px;
+	right: -210px; 
+		padding: 0px 0;
 	font-size: 120%;
 	text-decoration: none;
 	line-height: 180%;
@@ -674,7 +638,7 @@ ul.pagelist li.next {
 }
 
 /* Paged thumbs nav
------------------------------- */
+------------------------------ *
 #pagedthumbsnav {
 	width: 580px;
 	height: 55px;
@@ -744,7 +708,7 @@ ul.pagelist li.next {
 }
 
 /* Comments
------------------------------- */
+------------------------------ *
 #comments {
 	clear: both;
 	width: 560px;
@@ -785,7 +749,7 @@ ul.pagelist li.next {
 	font-size: 85%;
 }
 
-/* jQuery pagination comments */
+/* jQuery pagination comments *
 
 .Pagination {
 	margin-bottom: 10px;
@@ -808,7 +772,7 @@ ul.pagelist li.next {
 }
 
 /* Forms
------------------------------- */
+------------------------------ *
 .inputbox {
 	width: 250px;
 	padding: 2px;
@@ -853,7 +817,7 @@ label:hover {
 }
 
 /* Admin Toolbox
------------------------------- */
+------------------------------ *
 #admin,#admin_data {
 	position: fixed;
 	right: 0px;
@@ -888,17 +852,17 @@ label:hover {
 }
 
 /* Search Box
------------------------------- */
+------------------------------ *
 #search {
 	float: right;
-	margin-top: 10px;/* CL 21/05/2012 valeur origine 15px  */
+	margin-top: 10px;
 	margin-right: 20px;
 	text-align: center;
 	background: transparent;
 	z-index: 1000;
 	width: 220px;
 	position: relative;
-	border: 0px solid darkgray; /* 0px */
+	border: 2px solid orangered; 
 	background: transparent;
 }
 
@@ -947,7 +911,7 @@ label:hover {
 }
 
 /* Archive View
----------------------------- */
+---------------------------- *
 #archive {
 	width: 580px;
 	text-align: left;
@@ -996,7 +960,7 @@ ul.archive .archive-active a {
 }
 
 /* Tag Cloud
----------------------------- */
+---------------------------- 
 #tag_cloud {
 	text-align: center;
 	background: #eee;
@@ -1019,7 +983,7 @@ ul.archive .archive-active a {
 }
 
 /* Error Messages
------------------------------- */
+------------------------------ 
 .errorbox {
 	padding: 20px;
 	background-color: #FDD;
@@ -1043,7 +1007,7 @@ ul.archive .archive-active a {
 }	
 
 /* News Articles
------------------------------- */
+------------------------------ 
 hr {
 	border: 0;
 	border-top: 1px dashed gray;
@@ -1108,7 +1072,7 @@ hr {
 	width: 195px;
 }
 /* zenphoto/zenpage link
----------------------------*/
+---------------------------
 #zen-part {
 	font-size: 1.7em;
 	font-family: Arial, Helvetica, sans-serif;
@@ -1125,7 +1089,7 @@ hr {
 	font-weight: normal;
 }
 
-/* login form */
+/* login form 
 table.password td.userlabel{
 	text-align:left;
 }
@@ -1137,7 +1101,7 @@ table.password td.userinput input, td.passwordinput input {
 	width: 15em;
 }
 
-/* login form */
+/* login form 
 table.password td.passwordlabel{
 	text-align:left;
 }
@@ -1160,7 +1124,7 @@ table.password td.hint{
 
 
 /* Pretty Buttons
-------------------------------------- */
+------------------------------------- 
 .buttons a,.buttons button {
 	display: block;
 	float: left;
@@ -1178,20 +1142,20 @@ table.password td.hint{
 	font-weight: bold;
 	color: #565656;
 	cursor: pointer;
-	padding: 5px 10px 6px 7px; /* Links */
+	padding: 5px 10px 6px 7px; 
 }
 
 .buttons button {
 	text-decoration: none;
 	width: auto;
 	overflow: visible;
-	padding: 4px 10px 3px 7px; /* IE6 */
+	padding: 4px 10px 3px 7px; 
 }
 
 .buttons button[type] {
 	text-decoration: none;
-	padding: 5px 10px 5px 7px; /* Firefox */
-	line-height: 17px; /* Safari */
+	padding: 5px 10px 5px 7px; 
+	line-height: 17px; 
 }
 
 .buttons button img,.buttons a img {
@@ -1203,7 +1167,7 @@ table.password td.hint{
 	height: 16px;
 }
 
-/* standard buttons */
+/* standard buttons 
 button:hover,.buttons a:hover {
 	text-decoration: none;
 	background-color: #dff4ff;
@@ -1218,7 +1182,7 @@ button:hover,.buttons a:hover {
 	color: #fff;
 }
 
-/* positive buttons */
+/* positive buttons 
 button.positive,.buttons a.positive {
 	text-decoration: none;
 	color: #529214;
@@ -1238,7 +1202,7 @@ button.positive,.buttons a.positive {
 	color: #fff;
 }
 
-/* negative buttons */
+/* negative buttons 
 .buttons a.negative,button.negative {
 	text-decoration: none;
 	color: #d12f19;
@@ -1260,7 +1224,7 @@ button.positive,.buttons a.positive {
 
 
 
-/* slideshowlink */ 
+/* slideshowlink 
 
 #slideshowlink {
 display:block;
@@ -1275,7 +1239,7 @@ text-align:center;
 padding:8px;
 }
 
-/* map link */
+/* map link 
 #maplink {
 display:block;
 margin-bottom: 15px;
@@ -1289,7 +1253,7 @@ text-align:center;
 padding:8px;
 }
 
-/* tinyZenpage title addition */
+/* tinyZenpage title addition 
 .zenpage_wrapper_left,
 .zenpage_wrapper_right {
 border: 1px solid #EEEEEE;
@@ -1308,7 +1272,7 @@ margin-left: 10px;
 font-style: italic;
 }
 
-/*CSS3 rounded edges */
+/*CSS3 rounded edges 
 .album,
 #slideshowlink a,
 textarea,
@@ -1351,7 +1315,7 @@ height: 16px;
 	overflow:scroll !important;
 }
 /* box for important notes
------------------------------- */
+------------------------------ 
 .notebox {
 	padding: 5px 10px 5px 10px;
 	background-color: #FFEFB7;
@@ -1377,7 +1341,7 @@ height: 16px;
 	margin-bottom: 1em;
 }
 /* Messages
------------------------------- */
+------------------------------ 
 .messagebox {
 	background-color: #C0FFA8;
 	padding: 10px 15px 10px 15px;
@@ -1394,7 +1358,7 @@ height: 16px;
 	margin-bottom: 1em;
 }
 /* Login
------------------------------- */
+------------------------------ 
 #loginform {
 	padding: 10px;
 	width: 370px;
@@ -1455,4 +1419,4 @@ label:hover {
 
 #registration_form {
 	width:370px;
-}
+}*/

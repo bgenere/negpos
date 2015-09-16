@@ -5,48 +5,39 @@ if (!defined('WEBPATH'))
 if (function_exists('printRegistrationForm')) {
 	?>
 	<!DOCTYPE html>
-	<html>
+	<html><!-- Register -->
 		<head>
-			<!-- cl ajout favicon jpg-->
-			<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" />
-		
-			<meta charset="<?php echo LOCAL_CHARSET; ?>">
-			<?php zp_apply_filter('theme_head'); ?>
-			<?php printHeadTitle(); ?>
-			<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
-		</head>
+		<?php include ("head.php"); ?>
+	</head>
 		<body>
 			<?php zp_apply_filter('theme_body_open'); ?>
 			
-			<div id="main">
-			
-					<div id="header">
-							<?php include("header.php"); ?>
-					</div>
-			
-			<div id="content">
-			
-				<div id="breadcrumb">
+			<div id="main" class="container">
+			 	<div class="row" id="header">
+				 	<?php include("header.php"); ?>
+				</div>
+				<div class="row" id="breadcrumb">
 					<h2><?php printGalleryIndexURL(' » '); ?></h2>
 				</div>
+		
+				<div class="row" id="content">
+					<div class="col-sm-4" id="sidebar">
+						<?php include("sidebar.php"); ?>
+					</div><!-- sidebar -->		
 			
-				<div id="content-left">
-					<h1><?php echo gettext('User Registration') ?></h1>
-					<?php  printRegistrationForm();  ?>
-				</div><!-- content left-->
+					<div class="col-sm-8" id="content-left">
+						<h1><?php echo gettext('User Registration') ?></h1>
+						<?php  printRegistrationForm();  ?>
+					</div><!-- content left-->
 			
-				<div id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div><!-- sidebar -->
-					
-				<div id="footer">
-					<?php include("footer.php"); ?>
+				</div><!-- content -->
+				<div class="row" id="footer">
+						<?php include("footer.php"); ?>
 				</div>
-			
-			</div><!-- content -->
-			
+				
 			</div><!-- main -->
-			<?php zp_apply_filter('theme_body_close'); ?>
+			<!-- theme body close filter -->
+			<?php zp_apply_filter('theme_body_close');?>
 		</body>
 	</html>
 	<?php

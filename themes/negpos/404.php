@@ -1,54 +1,35 @@
 <?php
-
 // force UTF-8 Ø
 
-if (!defined('WEBPATH')) die();
-
+if (!defined('WEBPATH')) 
+	die();
 ?>
-<html>
+<!DOCTYPE html>
+<html><!-- 404 -->
 	<head>
-		<!-- cl ajout favicon jpg-->
-		<link rel="icon" type="image/jpeg" href="http://negpos.fr/negposphoto/uploaded/images/favicon.jpg" />
-	
-		<meta charset="<?php echo LOCAL_CHARSET; ?>">
-		<?php zp_apply_filter('theme_head'); ?>
-		<?php printHeadTitle(); ?>
-		<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
+		<?php include ("head.php"); ?>
 	</head>
-
 	<body>
+		<!-- theme body open filter -->
 		<?php zp_apply_filter('theme_body_open'); ?>
 		
-		<div id="main">
-		
-			<div id="header">
-				<h1 class="title">
-					<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Gallery Index'); ?>"><?php echo html_encode(getGalleryTitle()); ?></a>
-				</h1>
+		<div id="main" class="container">
+			 <div class="row" id="header">
+				 <?php include("header.php"); ?>
 			</div>
-		
-			<div id="content">
-				<div id="breadcrumb">
-					<h2><?php printGalleryIndexURL(); ?></h2>
-				</div>
-		
-				<div id="content-error">
-		
-					<div class="errorbox">
+			<div class="row" id="breadcrumb">
+				<h2><?php printGalleryIndexURL(' » '); ?></h2>
+			</div>
+			<div class="row" id="content-error">	
+					<div class="col-sm-12" class="errorbox">
 						<?php print404status(isset($album) ? $album : NULL, isset($image) ? $image : NULL, $obj); ?>
 					</div>
-		
-				</div>
-				
-				<div id="footer">
+			</div>
+			<div class="row" id="footer">
 					<?php include("footer.php"); ?>
-				</div>
-		
-			</div><!-- content -->
-		
+			</div>	
 		</div><!-- main -->
-		<?php 
-			zp_apply_filter('theme_body_close');
-		?>
+		<!-- theme body close filter -->
+		<?php zp_apply_filter('theme_body_close');?>
 	</body>
-</html>
+</html><!-- 404 -->
