@@ -13,6 +13,8 @@ if (!defined('WEBPATH'))
 		<!-- theme body open filter -->
 		<?php zp_apply_filter('theme_body_open'); ?>
 	
+		<?php include("navbar.php"); ?>
+		
 		<div id="main" class="container">
 			 <div class="row" id="header">
 				 <?php include("header.php"); ?>
