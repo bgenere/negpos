@@ -5,7 +5,7 @@ if (!defined('WEBPATH'))
 if (function_exists('printSlideShow')) {
 	?>
 	<!DOCTYPE html>
-	<html>
+	<html><!-- Slideshow -->
 	<head>
 		<?php include ("head.php"); ?>
 	</head>

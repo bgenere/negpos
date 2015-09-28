@@ -16,11 +16,9 @@ if (class_exists('Zenpage') && ZP_PAGES_ENABLED) {
 			<?php include("navbar.php"); ?>
 		
 			<div id="main" class="container">
-				<div class="row" id="header">
-					<?php include("header.php"); ?>
-				</div>			
+		
 				<div class="row" id="breadcrumb">
-								<h2><?php printGalleryIndexURL('');
+								<h6><?php printGalleryIndexURL('');
 									if (!isset($ishomepage)) {
 										printZenpageItemsBreadcrumb(" » ", "");
 									}
@@ -29,27 +27,22 @@ if (class_exists('Zenpage') && ZP_PAGES_ENABLED) {
 											printPageTitle(" » ");
 										}
 										?></strong>
-								</h2>
+								</h6>
 				</div>
 		
 				<div class="row" id="content">
-					<div class="col-sm-4" id="sidebar">
-						<?php include("sidebar.php"); ?>
-					</div><!-- sidebar -->
 					
-					<div class="col-sm-8" id="content-left">
-						<h2><?php printPageTitle(); ?></h2>
-						<?php 
-							printPageContent();
-							printCodeblock(1);
-							if(getTags()) { 
-								echo gettext('<strong>Tags:</strong>'); 
-							} printTags('links', '', 'taglist', ', '); 
-						?>
-						<br style="clear:both;" /><br />
-						<?php @call_user_func('printRating'); ?>
-						<?php @call_user_func('printCommentForm'); ?>
-					</div><!-- content left-->		
+					<h2><?php printPageTitle(); ?></h2>
+					<?php 
+						printPageContent();
+						printCodeblock(1);
+						if(getTags()) { 
+							echo gettext('<strong>Tags:</strong>'); 
+						} printTags('links', '', 'taglist', ', '); 
+					?>
+					<br style="clear:both;" /><br />
+					<?php @call_user_func('printRating'); ?>
+					<?php @call_user_func('printCommentForm'); ?>
 
 				</div><!-- content -->
 				<div class="row" id="footer">

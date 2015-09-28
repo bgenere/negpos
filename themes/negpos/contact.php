@@ -17,25 +17,17 @@ if (function_exists('printContactForm')) {
 			<?php include("navbar.php"); ?>
 		
 			<div id="main" class="container">
-			 	<div class="row" id="header">
-				 	<?php include("header.php"); ?>
-				</div>
+
 				<div class="row" id="breadcrumb">
-						<h2><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h2>
+						<h6><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h6>
 				</div>
 		
 				<div class="row" id="content">
-					<div class="col-sm-4" id="sidebar">
-						<?php include("sidebar.php"); ?>
-					</div><!-- sidebar -->		
-				
-					<div class="col-sm-8" id="content-left">
-						<h2><?php echo gettext('Contact us') ?></h2>
-						<?php
-						printContactForm();
-						?>
-				
-					</div><!-- content left-->			
+
+					<h2><?php echo gettext('Contact us') ?></h2>
+					<?php
+					printContactForm();
+					?>
 					
 				</div><!-- content -->
 			

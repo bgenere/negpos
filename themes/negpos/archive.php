@@ -16,35 +16,28 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			 <div class="row" id="header">
-				 <?php include("header.php"); ?>
-			</div>
+			 
 			<div class="row" id="breadcrumb">
-					<h2><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h2>
+					<h6><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h6>
 			</div>
 		
 			<div class="row" id="content">
-				<div class="col-sm-4" id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div><!-- sidebar -->		
-			
-				<div class="col-sm-8" id="content-left">
-						<div id="archive">
-							<h3><?php echo gettext('Gallery archive'); ?></h3>
-							<?php printAllDates(); ?>
-							<hr />
-							<?php if (extensionEnabled('zenpage') && ZP_NEWS_ENABLED) { ?>
-								<h3><?php echo gettext('News archive'); ?></h3>
-								<?php printNewsArchive("archive"); ?>
-								<hr />
-      							<?php } ?>
-			
-							<h3><?php echo gettext('Popular Tags'); ?></h3>
-							<div id="tag_cloud">
-								<?php printAllTagsAs('cloud', 'tags'); ?>
-							</div>
+
+				<div id="archive">
+					<h3><?php echo gettext('Gallery archive'); ?></h3>
+					<?php printAllDates(); ?>
+					<hr />
+					<?php if (extensionEnabled('zenpage') && ZP_NEWS_ENABLED) { ?>
+						<h3><?php echo gettext('News archive'); ?></h3>
+						<?php printNewsArchive("archive"); ?>
+						<hr />
+						<?php } ?>
+	
+					<h3><?php echo gettext('Popular Tags'); ?></h3>
+					<div id="tag_cloud">
+						<?php printAllTagsAs('cloud', 'tags'); ?>
 					</div>
-				</div><!-- content left-->			
+				</div>		
 					
 			</div><!-- content -->
 			

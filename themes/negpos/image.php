@@ -15,30 +15,15 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			 <div class="row" id="header">
-				<?php include("header.php"); ?>
-				<div class="imgnav">
-					<?php if (hasPrevImage()) { ?>
-						<div class="imgprevious"><a href="<?php echo html_encode(getPrevImageURL()); ?>" title="<?php echo gettext("Previous Image"); ?>">« <?php echo gettext("prev"); ?></a></div>
-					<?php } if (hasNextImage()) { ?>
-						<div class="imgnext"><a href="<?php echo html_encode(getNextImageURL()); ?>" title="<?php echo gettext("Next Image"); ?>"><?php echo gettext("next"); ?> »</a></div>
-					<?php } ?>
-				</div>
-			</div>
 			<div class="row" id="breadcrumb">
-						<h2><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » ");
+						<h6><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » ");
 						printAlbumBreadcrumb("  ", " » ");
 						?>
 							<strong><?php printImageTitle(); ?></strong> (<?php echo imageNumber() . "/" . getNumImages(); ?>)
-						</h2>
+						</h6>
 			</div>
 		
 			<div class="row" id="content">
-				<div class="col-sm-4" id="sidebar">
-					<?php include("sidebar.php"); ?>
-				</div><!-- sidebar -->		
-			
-				<div class="col-sm-8" id="content-left">
 			
 					<!-- The Image -->
 					<?php
@@ -105,9 +90,7 @@ if (!defined('WEBPATH'))
 								@call_user_func('printGoogleMap'); 
 							?>
 					</div>
-					<?php @call_user_func('printCommentForm'); ?>
-	
-				</div><!-- content left-->			
+					<?php @call_user_func('printCommentForm'); ?>		
 					
 			</div><!-- content -->
 			

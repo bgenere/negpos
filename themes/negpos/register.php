@@ -15,22 +15,15 @@ if (function_exists('printRegistrationForm')) {
 			<?php include("navbar.php"); ?>
 		
 			<div id="main" class="container">
-			 	<div class="row" id="header">
-				 	<?php include("header.php"); ?>
-				</div>
+			 	
 				<div class="row" id="breadcrumb">
-					<h2><?php printGalleryIndexURL(' » '); ?></h2>
+					<h6><?php printGalleryIndexURL(' » '); ?></h6>
 				</div>
 		
 				<div class="row" id="content">
-					<div class="col-sm-4" id="sidebar">
-						<?php include("sidebar.php"); ?>
-					</div><!-- sidebar -->		
-			
-					<div class="col-sm-8" id="content-left">
-						<h1><?php echo gettext('User Registration') ?></h1>
-						<?php  printRegistrationForm();  ?>
-					</div><!-- content left-->
+
+					<h1><?php echo gettext('User Registration') ?></h1>
+					<?php  printRegistrationForm();  ?>
 			
 				</div><!-- content -->
 				<div class="row" id="footer">

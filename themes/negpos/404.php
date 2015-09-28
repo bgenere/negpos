@@ -16,11 +16,9 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			 <div class="row" id="header">
-				 <?php include("header.php"); ?>
-			</div>
+			 
 			<div class="row" id="breadcrumb">
-				<h2><?php printGalleryIndexURL(' » '); ?></h2>
+				<h6><?php printGalleryIndexURL(' » '); ?></h6>
 			</div>
 			<div class="row" id="content-error">	
 					<div class="col-sm-12" class="errorbox">
