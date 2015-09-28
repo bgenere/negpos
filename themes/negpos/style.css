@@ -1,4 +1,10 @@
 #logo {
 	height:50px; 
 	padding:0;
+	padding-left: 5% ;
+	padding-right: 5%;
+}
+.flags {
+	padding: 0;
+	border: 2px solid red;
 }
