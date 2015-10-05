@@ -16,51 +16,49 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			 
-			<div class="row" id="breadcrumb">
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div> 
+			<div class="breadcrumb">
 				<h6><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » "); ?><strong><?php printAlbumTitle(); ?></strong></h6>
 			</div>
 		
-			<div class="row" id="content">
+			<div id="content">
 				
-				<div><?php printAlbumDesc(); ?></div>
-					
+				<div><?php printAlbumDesc(); ?></div>					
 				<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
-				<div id="albums">
+				<ul class="list-inline">
 					<?php while (next_album()): ?>
-						<div class="album">
-							<div class="thumb">
-								<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php getBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(), NULL, 95, 95, 95, 95); ?></a>
-							</div>
-							<div class="albumdesc">
-								<h3><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h3>
+						<li class="thumbnail">
+							<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php getBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(),"",240,"", 240, 160); ?></a>
+							<h4><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h4>
+							<p>
 								<?php printAlbumDate(""); ?>
-								<div><?php echo shortenContent(getAlbumDesc(), 45, '...'); ?></div>
+								<?php echo shortenContent(getAlbumDesc(), 45, '...'); ?>
 								<?php
 								if (function_exists('printAddToFavorites')) {
 									echo "<br />";
 									printAddToFavorites($_zp_current_album);
 								}
 								?>
-							</div>
-							<p style="clear: both; "></p>
-						</div>
+							</p>
+						</li>
 					<?php endwhile; ?>
-				</div>
+				</ul>
 		
-				<div id="images">
+				<ul class="list-inline">
 					<?php while (next_image()): ?>
-						<div class="image">
-							<div class="imagethumb"><a href="<?php echo html_encode(getImageURL()); ?>" title="<?php printBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a></div>
-						</div>
+						<li>
+							<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php printBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle(),"img-thumbnail"); ?></a>
+						</li>
 					<?php endwhile; ?>
-				</div>
-				<p style="clear: both; "></p>
+				</ul>
+
 				<?php
 					printPageListWithNav("« " . gettext("prev"), gettext("next") . " »");
 					printTags('links', gettext('<strong>Tags:</strong>') . ' ', 'taglist', ', ');
 				?>
-				<br style="clear:both;" /><br />
+				<br />
 				<?php
 				if (function_exists('printGoogleMap')) {
 					echo '<p id="maplink">';
@@ -75,7 +73,7 @@ if (!defined('WEBPATH'))
 					echo '</span>';
 				}
 				?>
-				<br style="clear:both;" />
+				<br/>
 				<?php
 				if (function_exists('printAddToFavorites')) printAddToFavorites($_zp_current_album);
 				@call_user_func('printRating');
@@ -83,10 +81,7 @@ if (!defined('WEBPATH'))
 				?>	
 					
 			</div><!-- content -->
-			
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>
+			<?php include("footer.php"); ?>
 			
 		</div><!-- main -->
 		<!-- theme body close filter -->

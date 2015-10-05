@@ -1,13 +1,13 @@
  <!-- navbar - begin -->
  <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" id="logo" href="#">
+      <a class="navbar-brand" id="logo" href="<?php echo getGalleryIndexURL(); ?>">
         <img src="<?php echo $_zp_themeroot;?>/images/logo.png" height="50px"  alt="Logo Negpos" >
       </a>
     </div> 

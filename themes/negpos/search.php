@@ -16,13 +16,15 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>	
 		
 		<div id="main" class="container">
-			
-			<div class="row" id="breadcrumb">
-					<h6><?php printGalleryIndexURL(' » '); printSearchBreadcrumb(" » "); ?>
-					</h6>
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div>
+			<div class="breadcrumb">
+				<h6><?php printGalleryIndexURL(' » '); printSearchBreadcrumb(" » "); ?>
+				</h6>
 			</div>
 		
-			<div class="row" id="content">
+			<div id="content">
 				
 						<?php
 						$searchwords = getSearchWords();
@@ -138,10 +140,7 @@ if (!defined('WEBPATH'))
 						?>
 					
 			</div><!-- content -->
-			
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>
+			<?php include("footer.php"); ?>
 			
 		</div><!-- main -->
 		<!-- theme body close filter -->

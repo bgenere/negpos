@@ -16,18 +16,26 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			 
-			<div class="row" id="breadcrumb">
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div>
+			<div class="breadcrumb">
 				<h6><?php printGalleryIndexURL(' » '); ?></h6>
 			</div>
-			<div class="row" id="content-error">	
-					<div class="col-sm-12" class="errorbox">
-						<?php print404status(isset($album) ? $album : NULL, isset($image) ? $image : NULL, $obj); ?>
-					</div>
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+							<h4>
+								<span class="glyphicon glyphicon-alert"></span>
+								404
+							</h4>
+						</div>
+				<div class="panel-body">
+					<?php print404status(isset($album) ? $album : NULL, isset($image) ? $image : NULL, $obj); ?>
+				</div>
 			</div>
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>	
+
+			<?php include("footer.php"); ?>
+
 		</div><!-- main -->
 		<!-- theme body close filter -->
 		<?php zp_apply_filter('theme_body_close');?>

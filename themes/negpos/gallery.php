@@ -13,53 +13,44 @@ if (!defined('WEBPATH'))
 		<!-- theme body open filter -->
 		<?php zp_apply_filter('theme_body_open'); ?>
 		
-		<?php include("navbar.php"); ?>
-		
-		<?php include("carousel.php"); ?>
+		<?php include("navbar.php"); ?>	
 		
 		<div id="main" class="container">
 
-			<div class="row" id="breadcrumb">
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div>
+			<div class="breadcrumb">
 				<h6><?php printGalleryIndexURL(' » '); ?></h6>
 			</div>
-		
+			
+			<?php include("carousel.php"); ?>
+			<br />
+					
 			<div class="row" id="content">
 				
 				<div class="col-md-8">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4>
-								<span class="glyphicon glyphicon-pushpin"></span>
-								<?php printGalleryTitle(); ?>
-							</h4>
-						</div>
-						<div class="panel-body">
-							<!-- Gallery description -->
-							<?php printGalleryDesc(); ?>
-						</div>
+					<div>
+						<!-- Gallery description -->
+						<?php printGalleryDesc(); ?><hr>
 					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">		
-							<h4>
-								<span class="glyphicon glyphicon-film"></span>
-								<?php echo gettext("Gallery"); ?>
-							</h4>
-						</div>
-						<div class="panel-body" id="albums">
-							<?php while (next_album()): ?>
-							<div class="album">
-								<span class="thumb">
-									<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(), NULL, 95, 95, 95, 95); ?></a>
-								</span>
-								<span class="albumdesc">
-									<h5><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h5>
-									<?php printAlbumDate(""); ?>
-									<div><?php echo shortenContent(getAlbumDesc(), 45, '...'); ?></div>
-								</span>
-							</div>
-							<?php endwhile; ?>
-						</div>
-					</div>
+					<h3>
+						<?php echo gettext("Gallery"); ?>
+					</h3>
+			
+					<ul class="list-inline">
+					<?php while (next_album()): ?>
+						<li class="thumbnail">
+							<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(),"",240,"", 240, 160); ?></a>
+							<h4><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h4>								
+							<p>
+								<?php printAlbumDate(""); ?>
+							    <?php echo shortenContent(getAlbumDesc(), 45, '...'); ?>
+							</p>
+						</li>
+					<?php endwhile; ?>
+					</ul>
+
             	</div> <!-- col-md-8 -->	
 				
 				<div class="col-md-4">
@@ -103,10 +94,8 @@ if (!defined('WEBPATH'))
             	</div> <!-- col-md-4 -->				
 									
 			</div><!-- content -->
-			
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>
+			<?php include("footer.php"); ?>
+
 			
 		</div><!-- main -->
 		<!-- theme body close filter -->

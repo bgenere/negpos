@@ -15,89 +15,80 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			<div class="row" id="breadcrumb">
-						<h6><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » ");
-						printAlbumBreadcrumb("  ", " » ");
-						?>
-							<strong><?php printImageTitle(); ?></strong> (<?php echo imageNumber() . "/" . getNumImages(); ?>)
-						</h6>
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div> 
+			<div class="breadcrumb">
+				<h6><?php printGalleryIndexURL(' » '); printParentBreadcrumb("", " » ", " » ");
+				printAlbumBreadcrumb("  ", " » ");
+				?>
+					<strong><?php printImageTitle(); ?></strong> (<?php echo imageNumber() . "/" . getNumImages(); ?>)
+				</h6>
 			</div>
 		
 			<div class="row" id="content">
-			
-					<!-- The Image -->
+				<div class="col-md-2"><!-- The Navigation thumbnail -->
 					<?php
-					//
-					if (function_exists('printThumbNav')) {
-						printThumbNav(3, 6, 50, 50, 50, 50, FALSE);
-					} else {
-						@call_user_func('printPagedThumbsNav', 6, FALSE, gettext('« prev thumbs'), gettext('next thumbs »'), 40, 40);
-						}
+						printPagedThumbsNav(6, TRUE,'«', '»', NULL, NULL, NULL, NULL, TRUE,TRUE,6 );
 					?>
-				
-					<div id="image">
-						<?php
-							if (getOption("Use_thickbox") && !isImageVideo()) {
-								$boxclass = " class=\"thickbox\"";
-							} else {
-								$boxclass = "";
+				</div>			
+				<div class="col-md-6 thumbnail"> <!-- The Image -->
+					<?php
+						if (isImagePhoto()) {
+							$tburl = getFullImageURL();
+						} else {
+							$tburl = NULL;
+						}
+						if (!empty($tburl)) {
+							?>
+							<a href="<?php echo html_encode(pathurlencode($tburl)); ?>" title="<?php printBareImageTitle(); ?>">
+								<?php
 							}
-							if (isImagePhoto()) {
-								$tburl = getFullImageURL();
-							} else {
-								$tburl = NULL;
-							}
+							printCustomSizedImageMaxSpace(getBareImageTitle(), 580, 580, 'img-responsive');
+							?>
+							<?php
 							if (!empty($tburl)) {
 								?>
-								<a href="<?php echo html_encode(pathurlencode($tburl)); ?>"<?php echo $boxclass; ?> title="<?php printBareImageTitle(); ?>">
-									<?php
-								}
-								printCustomSizedImageMaxSpace(getBareImageTitle(), 580, 580);
-								?>
-								<?php
-								if (!empty($tburl)) {
-									?>
-								</a>
-								<?php
-							}
+							</a>
+							<?php
+						}
+					?>
+					<br />
+				</div>
+				<div class="col-md-4">
+						<div id="imagedesc"><?php printImageDesc(); ?></div>
+						<?php
+						if (getTags()) {
+							echo gettext('<strong>Tags:</strong>');
+						} printTags('links', '', 'taglist', ', ');
 						?>
-					</div>
-					<div id="narrow">
-							<div id="imagedesc"><?php printImageDesc(); ?></div>
-							<?php
-							if (getTags()) {
-								echo gettext('<strong>Tags:</strong>');
-							} printTags('links', '', 'taglist', ', ');
-							?>
-							<br style="clear:both;" /><br />
-							<?php
-							if (function_exists('printSlideShowLink')) {
-								echo '<span id="slideshowlink">';
-								printSlideShowLink();
-								echo '</span>';
-							}
-							?>
-	
-							<?php
-							if (getImageMetaData()) {
-								printImageMetadata(NULL, 'colorbox');
-							}
-							?>
-	
-							<br style="clear:both" />
-							<?php If (function_exists('printAddToFavorites')) printAddToFavorites($_zp_current_image); 
-								@call_user_func('printRating'); 
-								@call_user_func('printGoogleMap'); 
-							?>
-					</div>
-					<?php @call_user_func('printCommentForm'); ?>		
+						
+						<?php
+						if (function_exists('printSlideShowLink')) {
+							echo '<span id="slideshowlink">';
+							printSlideShowLink();
+							echo '</span>';
+						}
+						?>
+
+						<?php
+						if (getImageMetaData()) {
+							printImageMetadata(NULL, 'colorbox');
+						}
+						?>
+
+						
+						<?php If (function_exists('printAddToFavorites')) printAddToFavorites($_zp_current_image); 
+							@call_user_func('printRating'); 
+							@call_user_func('printGoogleMap'); 
+						?>
+						<?php @call_user_func('printCommentForm'); ?>
+				</div>
+							
 					
 			</div><!-- content -->
 			
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>
-			
+			<?php include("footer.php"); ?>
 		</div><!-- main -->
 		<!-- theme body close filter -->
 		<?php zp_apply_filter('theme_body_close');?>

@@ -16,14 +16,15 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-
-			<div class="row" id="breadcrumb">
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div>
+			<div class="breadcrumb">
 				<h6><?php printGalleryIndexURL(' » '); ?></h6>
 			</div>
 		
-			<div class="row" id="content">
-				
-		
+			<div id="content">
+	
 				<div id="content-error">
 			
 					<div class="errorbox">
@@ -37,14 +38,9 @@ if (!defined('WEBPATH'))
 						}
 					?>
 				</div>
-		
-		
 					
 			</div><!-- content -->
-			
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>
+			<?php include("footer.php"); ?>
 			
 		</div><!-- main -->
 		<!-- theme body close filter -->

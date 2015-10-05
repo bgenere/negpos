@@ -1,29 +1,6 @@
 #logo {
 	height:50px; 
 	padding:0;
-	padding-left: 5% ;
-	padding-right: 5%;
-}
-#breadcrumb {
-	padding-top: 0px;
-	border-bottom: 1px solid silver;
-	margin-bottom: 3px;
-}
-#albums {
-  font-size: 10px;
-}
-.album {
-  background: #fbfbf8 none repeat scroll 0 0;
-  border: 1px solid #eeeeee;
-  display: inline-block;
-  margin: 0 16px 15px 0;
-  padding: 10px 0 10px 10px;
-}
-.album .thumb {
-  display: inline-block;
-  margin-right: 6px;
-  text-decoration: none;
-}
-.albumdesc {
-  display: inline-block;
+	padding-left: 15px ;
+	padding-right: 15px;
 }

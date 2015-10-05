@@ -16,21 +16,23 @@ if (class_exists('Zenpage') && ZP_PAGES_ENABLED) {
 			<?php include("navbar.php"); ?>
 		
 			<div id="main" class="container">
-		
-				<div class="row" id="breadcrumb">
-								<h6><?php printGalleryIndexURL('');
-									if (!isset($ishomepage)) {
-										printZenpageItemsBreadcrumb(" » ", "");
-									}
-									?><strong><?php
-										if (!isset($ishomepage)) {
-											printPageTitle(" » ");
-										}
-										?></strong>
-								</h6>
+				<div class="lead"> 
+					<?php printGalleryTitle(); ?>	
+				</div>
+				<div class="breadcrumb">			
+						<h6><?php printGalleryIndexURL('');
+							if (!isset($ishomepage)) {
+								printZenpageItemsBreadcrumb(" » ", "");
+							}
+							?><strong><?php
+								if (!isset($ishomepage)) {
+									printPageTitle(" » ");
+								}
+								?></strong>
+						</h6>
 				</div>
 		
-				<div class="row" id="content">
+				<div id="content">
 					
 					<h2><?php printPageTitle(); ?></h2>
 					<?php 
@@ -45,9 +47,8 @@ if (class_exists('Zenpage') && ZP_PAGES_ENABLED) {
 					<?php @call_user_func('printCommentForm'); ?>
 
 				</div><!-- content -->
-				<div class="row" id="footer">
-						<?php include("footer.php"); ?>
-					</div>
+				<?php include("footer.php"); ?>
+
 			</div><!-- main -->
 			<!-- theme body close filter -->
 			<?php zp_apply_filter('theme_body_close'); ?>

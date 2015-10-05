@@ -17,12 +17,14 @@ if (function_exists('printContactForm')) {
 			<?php include("navbar.php"); ?>
 		
 			<div id="main" class="container">
-
-				<div class="row" id="breadcrumb">
-						<h6><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h6>
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div>
+				<div class="breadcrumb">
+					<h6><?php printGalleryIndexURL(' » '); ?></h6>
 				</div>
 		
-				<div class="row" id="content">
+				<div id="content">
 
 					<h2><?php echo gettext('Contact us') ?></h2>
 					<?php
@@ -30,10 +32,7 @@ if (function_exists('printContactForm')) {
 					?>
 					
 				</div><!-- content -->
-			
-				<div class="row" id="footer">
-						<?php include("footer.php"); ?>
-				</div>
+				<?php include("footer.php"); ?>
 			
 			</div><!-- main -->
 			<!-- theme body close filter -->

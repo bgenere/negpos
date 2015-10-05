@@ -16,12 +16,14 @@ if (!defined('WEBPATH'))
 		<?php include("navbar.php"); ?>
 		
 		<div id="main" class="container">
-			 
-			<div class="row" id="breadcrumb">
-					<h6><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h6>
+			<div class="lead"> 
+				<?php printGalleryTitle(); ?>	
+			</div>
+			<div class="breadcrumb">				
+				<h6><?php printGalleryIndexURL(' » '); ?><strong><?php echo gettext("Archive View"); ?></strong></h6>
 			</div>
 		
-			<div class="row" id="content">
+			<div id="content">
 
 				<div id="archive">
 					<h3><?php echo gettext('Gallery archive'); ?></h3>
@@ -40,10 +42,7 @@ if (!defined('WEBPATH'))
 				</div>		
 					
 			</div><!-- content -->
-			
-			<div class="row" id="footer">
-					<?php include("footer.php"); ?>
-			</div>
+			<?php include("footer.php"); ?>
 			
 		</div><!-- main -->
 		<!-- theme body close filter -->
