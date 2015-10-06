@@ -27,9 +27,9 @@ if (!defined('WEBPATH'))
 			</div>
 		
 			<div class="row" id="content">
-				<div class="col-md-2"><!-- The Navigation thumbnail -->
+				<div class="col-md-2 pager"><!-- The Navigation thumbnail -->
 					<?php
-						printPagedThumbsNav(6, TRUE,'«', '»', NULL, NULL, NULL, NULL, TRUE,TRUE,6 );
+						printPagedThumbsNav(12, TRUE,'«', '»', NULL, NULL, NULL, NULL, FALSE,FALSE,6 );
 					?>
 				</div>			
 				<div class="col-md-6 thumbnail"> <!-- The Image -->

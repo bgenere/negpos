@@ -26,7 +26,7 @@ if (!defined('WEBPATH'))
 			<div id="content">
 				
 				<div><?php printAlbumDesc(); ?></div>					
-				<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
+				<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »",FALSE,TRUE,"pager",TRUE,9); ?>
 				<ul class="list-inline">
 					<?php while (next_album()): ?>
 						<li class="thumbnail">
@@ -55,7 +55,7 @@ if (!defined('WEBPATH'))
 				</ul>
 
 				<?php
-					printPageListWithNav("« " . gettext("prev"), gettext("next") . " »");
+					printPageListWithNav("« " . gettext("prev"), gettext("next") . " »",FALSE,TRUE,"pager",TRUE,9); 
 					printTags('links', gettext('<strong>Tags:</strong>') . ' ', 'taglist', ', ');
 				?>
 				<br />

@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav" >
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="../news">
           <?php echo "Actualités"; ?>
           <span class="caret"></span>
           </a>
