@@ -19,13 +19,44 @@ if (!defined('WEBPATH'))
 			<div class="lead"> 
 				<?php printGalleryTitle(); ?>	
 			</div>
+			
 			<div class="breadcrumb">
 				<h6><?php printGalleryIndexURL(' » '); printSearchBreadcrumb(" » "); ?>
 				</h6>
 			</div>
 		
 			<div id="content">
-				
+				<?php
+				$zenpage = extensionEnabled('zenpage');
+				$numimages = getNumImages();
+				$numalbums = getNumAlbums();
+				$total = $numimages + $numalbums;
+				if ($zenpage && !isArchive()) {
+					$numpages = getNumPages();
+					$numnews = getNumNews();
+					$total = $total + $numnews + $numpages;
+				} else {
+					$numpages = $numnews = 0;
+				}
+				if ($total == 0) {
+					$_zp_current_search->clearSearchWords();
+				}
+				if (getOption('Allow_search')) {
+					$categorylist = $_zp_current_search->getCategoryList();
+					if (is_array($categorylist)) {
+						$catlist = array('news' => $categorylist, 'albums' => '0', 'images' => '0', 'pages' => '0');
+						printSearchForm(NULL, 'search', NULL, gettext('Search category'), NULL, NULL, $catlist);
+					} else {
+						$albumlist = $_zp_current_search->getAlbumList();
+						if (is_array($albumlist)) {
+							$album_list = array('albums' => $albumlist, 'pages' => '0', 'news' => '0');
+							printSearchForm(NULL, 'search', NULL, gettext('Search album'), NULL, NULL, $album_list);
+						} else {
+							printSearchForm("", "search", "", gettext("Search gallery"));
+						}
+					}
+				}
+				?>
 						<?php
 						$searchwords = getSearchWords();
 						$searchdate = getSearchDate();
