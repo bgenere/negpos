@@ -34,7 +34,7 @@ if (!defined('WEBPATH'))
 							<h4><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h4>
 							<p>
 								<?php printAlbumDate(""); ?>
-								<?php echo shortenContent(getAlbumDesc(), 45, '...'); ?>
+								<?php echo shortenContent(getAlbumDesc(), 40, '...'); ?>
 								<?php
 								if (function_exists('printAddToFavorites')) {
 									echo "<br />";

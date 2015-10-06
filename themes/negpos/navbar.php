@@ -111,7 +111,7 @@
          </li>  
          <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-             <img src="http://localhost/negpos/zenphoto-zenphoto-1.4.9/zp-core/images/rss.png" alt="RSS Feed">
+             <img src="<?php echo FULLWEBPATH.'/'.ZENFOLDER ?>/images/rss.png" alt="RSS Feed">
             </a>
             <ul class="dropdown-menu">
               <?php
