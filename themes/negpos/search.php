@@ -167,7 +167,7 @@ if (!defined('WEBPATH'))
 						if ($total == 0) {
 							echo "<p>" . gettext("Sorry, no matches found. Try refining your search.") . "</p>";
 						}
-						printPageListWithNav("« " . gettext("prev"), gettext("next") . " »");
+						printPageListWithNav("« " . gettext("prev"), gettext("next") . " »",FALSE,TRUE,"pager",TRUE,9);
 						?>
 					
 			</div><!-- content -->
