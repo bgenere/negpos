@@ -1,10 +1,17 @@
  <!-- Get Files in thème/images/slider -->
  <?php
-	$path = $_zp_themeroot."/images/slider/";
-	$filepattern = $path."*.jpg";
-	$files = glob($filepattern);
-    //Show files
-	echo $files ."<br/>";
+	$path = getcwd()."/themes/negpos/images/slider";
+	$files = scandir($path);
+	$filesnb = count($files);
+    //Show trace
+	/*echo "-- Trace --<br/>";
+	echo getcwd();
+	echo "<br/>";
+	var_dump( $path );
+	echo "<br/>";
+	for ($i = 2; $i < $filesnb; $i++){
+		echo $files[$i];
+	}*/
 ?> 
  
  <!-- Carousel - begin -->
@@ -12,14 +19,15 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner">
 		<div class="item active">
-			<img src="<?php echo $_zp_themeroot;?>/images/slider/headbanner.jpg" >		
+			<img src="<?php echo $_zp_themeroot;?>/images/slider/<?php echo $files[2];?>" >		
 		</div>
-		<div class="item">
-			<img src="<?php echo $_zp_themeroot;?>/images/slider/headbanner2.jpg" >
-		</div>
-		<div class="item">
-			<img src="<?php echo $_zp_themeroot;?>/images/slider/headbanner3.jpg" >
-		</div>
+		<?php
+			for ($i = 3; $i < $filesnb; $i++){
+				echo '<div class="item">';
+				echo '<img src="'.$_zp_themeroot.'/images/slider/'.$files[$i].'">';
+				echo '</div>';
+			}		
+		?>
 	</div>
 
 	<!-- Left and right controls -->
